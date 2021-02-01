@@ -1,0 +1,67 @@
+<html>
+  <head>
+    <title>Example</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r125/three.js"
+      integrity="sha512-1k30ak5bRjdWRjgzWKvGH36UXuWxLsw0QzoXdghXbgVu2Ur71UdLDPpwPcUPiLwvkZBJF/daLxkIH/idYW7UAg=="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <table>
+        <tr>
+          <th class="row-name-headline">Имя</th>
+          <th class="row-phone-headline">Телефон</th>
+        </tr>
+      </table>
+    </div>
+    <div class="error-message">
+    </div>
+    <div class="panel">
+      <Label>
+        Пожалуйста введите имя
+        <input placeholder="Юджин" type="text" class="name">
+      </Label>
+      <label>
+        Пожалуйста введите действительный номер телефона
+        <input placeholder="+79675412334" type="tel" class="phone">
+      </label>
+      <button class="add-contact">
+          Добавить новую запись
+      </button>
+    </div>
+
+    <template id="templateList">
+        <tr class="row">
+          <td class="row-name"></td>
+          <td class="row-phone"></td>
+          <td class="row-id"></td>
+          <td class="row-controls">
+              <span class="material-icons edit"> create </span>
+              <span class="material-icons delete"> delete </span>
+          </td>
+        </tr>
+    </template>
+    <template id="templateEditor">
+      <tr class="row">
+        <td class="row-name">
+          <input class="row-name" type="text">
+        </td>
+        <td class="row-phone">
+          <input class="row-phone" type="tel">
+        </td>
+        <td class="row-id"></td>
+        <td class="row-controls">
+          <span class="material-icons save"> create </span>
+      </td>
+      </tr>
+    </template>
+  </body>
+  <script src="./index.js" type="module"></script>
+</html>

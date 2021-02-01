@@ -1,0 +1,110 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+table {
+    margin: 50px auto 20px auto;
+    width: 600px;
+ }
+
+ th {
+    border: 1px solid grey;
+ }
+
+ td {
+    border: 1px solid grey;
+ }
+
+ .error-message {
+    text-align: center;
+    margin: 0 auto;
+    font-size: 18px;
+    width: 600px;
+    background-color: brown;
+    border-radius: 3px;
+    color: cornsilk;
+    transition: .6s;
+    height: 0;
+    overflow: hidden;
+ }
+
+ .error-message.show {
+   padding: 20px 0;
+   height: 20px;
+ }
+
+ .panel {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+ }
+
+ label {
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
+ }
+
+ input {
+    margin: 5px auto;
+    width: 200px;
+ }
+
+ button {
+    margin: 10px auto;
+    width: 300px;
+    background: darkblue;
+    color: white;
+    border: none;
+    padding: 5px 0;
+    border-radius: 3px;
+}
+
+.row-id {
+   display: none;
+}
+
+ .row-name, .row-phone {
+    text-align: center;
+    width: 45%;
+ }
+
+ .row-name-headline, .row-phone-headline {
+    text-align: center;
+    width: 250px;
+ }
+ .row-controls {
+     border: none;
+     width: 10%;
+ }
+
+ .row-controls span {
+     cursor: pointer;
+ }
+
+ .material-icons.delete {
+    color: brown;
+    opacity: .5;
+ }
+
+ .material-icons.delete:hover {
+    opacity: 1;
+ }
+
+ .material-icons.edit {
+    color: blue;
+    opacity: .5;
+ }
+
+ .material-icons.edit:hover {
+    opacity: 1;
+ }
