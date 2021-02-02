@@ -34,7 +34,9 @@ export class ControllersDeclaration {
     const id = event.target.parentNode.parentNode.querySelector(".row-id")
       .textContent;
 
-    const index = assetOfContacts.findIndex((contact) => contact.id === id);
+    const index = assetOfContacts.findIndex(
+      (contact) => contact.id.toString() === id
+    );
     assetOfContacts.splice(index, 1);
     ContactBook.onUpdatesContactsListWanted(assetOfContacts);
     this.onUpdateListeners();
@@ -53,27 +55,24 @@ export class ControllersDeclaration {
   };
 
   onClickSaveButtonWanted = (event) => {
-    const node = event.target.parentNode.parentNode; 
-    const name = node.querySelector(".row-name")
-      .children[0].value;
-    const phone = node.querySelector(".row-phone")
-      .children[0].value;
-    const id = node.querySelector(".row-id")
-      .textContent;
+    const node = event.target.parentNode.parentNode;
+    const name = node.querySelector(".row-name").children[0].value;
+    const phone = node.querySelector(".row-phone").children[0].value;
+    const id = node.querySelector(".row-id").textContent;
 
     if (
-        Helpers.onCustomNameFieldCheckValid(name)
-        && Helpers.onCustomPhoneFieldCheckValid(phone)
+      Helpers.onCustomNameFieldCheckValid(name) &&
+      Helpers.onCustomPhoneFieldCheckValid(phone)
     ) {
-        const index = assetOfContacts.findIndex(
-          (contact) => contact.id.toString() === id
-        );
-        assetOfContacts[index].type = "table";
-        assetOfContacts[index].name = name;
-        assetOfContacts[index].phone = phone;
-        ContactBook.onUpdatesContactsListWanted(assetOfContacts);
-        this.onUpdateListeners();
-        return;
+      const index = assetOfContacts.findIndex(
+        (contact) => contact.id.toString() === id
+      );
+      assetOfContacts[index].type = "table";
+      assetOfContacts[index].name = name;
+      assetOfContacts[index].phone = phone;
+      ContactBook.onUpdatesContactsListWanted(assetOfContacts);
+      this.onUpdateListeners();
+      return;
     }
 
     this.onShowErrorModalWanted();
