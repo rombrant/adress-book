@@ -1,12 +1,12 @@
 import { assetOfContacts } from './asset.js';
-import { ContactBook, setRemoverEventListner, setEditorEventListner, Helpers } from './index.js';
+import { ContactBook, Helpers, Controllers } from './index.js';
 
 export class ApiDeclaration {
     onMountGetDataFromServer = () => {  
         // Dummy api get data when table open      
-        ContactBook.onUpdatesContactsListWanted(assetOfContacts)
-        setRemoverEventListner();
-        setEditorEventListner();
+        ContactBook.onUpdatesContactsListWanted(assetOfContacts);
+
+        Controllers.onUpdateListeners();
     }
 
     onUpdateContactsList = (name, phone) => {  
